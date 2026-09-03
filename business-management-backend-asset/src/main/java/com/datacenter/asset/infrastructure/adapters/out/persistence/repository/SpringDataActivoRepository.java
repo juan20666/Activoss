@@ -10,4 +10,5 @@ import java.util.UUID;
 @Repository
 public interface SpringDataActivoRepository extends JpaRepository<AssetEntity, UUID> {
     Optional<AssetEntity> findByCode(String code);
+    boolean existsByCode(String code);
 }
