@@ -40,4 +40,17 @@ public class AssetRepositoryAdapter implements AssetRepositoryPort {
     public Optional<Asset> findById(UUID id) {
         return repository.findById(id).map(mapper::toDomain);
     }
+
+    @Override
+    public Optional<Asset> findByCode(String code) {
+        return repository.findByCode(code)
+                .map(mapper::toDomain);
+    }
+
+    @Override
+    public boolean existsByCode(String code) {
+        return repository.existsByCode(code);
+    }
+
+    
 }

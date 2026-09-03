@@ -9,4 +9,8 @@ public interface AssetRepositoryPort {
     Asset save(Asset asset);
     List<Asset> findAll();
     Optional<Asset> findById(UUID id);
+
+    Optional<Asset> findByCode(String code);
+
+    boolean existsByCode(String code);
 }
