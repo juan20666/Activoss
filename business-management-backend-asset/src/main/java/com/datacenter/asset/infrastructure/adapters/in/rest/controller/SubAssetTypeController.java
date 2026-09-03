@@ -3,6 +3,7 @@ package com.datacenter.asset.infrastructure.adapters.in.rest.controller;
 import com.datacenter.asset.application.service.SubAssetTypeService;
 import com.datacenter.asset.infrastructure.adapters.in.rest.dto.request.CreateSubAssetTypeRequest;
 import com.datacenter.asset.infrastructure.adapters.in.rest.dto.request.UpdateSubAssetTypeRequest;
+import com.datacenter.asset.infrastructure.adapters.in.rest.dto.response.SubAssetTypeFormResponse;
 import com.datacenter.asset.infrastructure.adapters.in.rest.dto.response.SubAssetTypeResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -91,6 +92,15 @@ public class SubAssetTypeController {
 
         return ResponseEntity.ok(
                 service.desactivate(id)
+        );
+    }
+
+    @GetMapping("/{id}/form")
+    public ResponseEntity<SubAssetTypeFormResponse> getFormBySubAssetType(
+            @PathVariable UUID id
+    ) {
+        return ResponseEntity.ok(
+                service.getFormBySubAssetTypeId(id)
         );
     }
 }

@@ -1,0 +1,22 @@
+package com.datacenter.asset.domain.ports.out;
+
+import com.datacenter.asset.domain.fielddefinition.FieldDefinition;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface FieldDefinitionRepositoryPort {
+
+    FieldDefinition save(FieldDefinition fieldDefinition);
+
+    List<FieldDefinition> findAll();
+
+    Optional<FieldDefinition> findById(UUID id);
+
+    List<FieldDefinition> findBySubAssetTypeId(UUID subAssetTypeId);
+
+    List<FieldDefinition> findByFieldGroupId(UUID fieldGroupId);
+
+    FieldDefinition update(FieldDefinition fieldDefinition);
+}
